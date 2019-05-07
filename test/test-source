@@ -6,7 +6,7 @@ import dbus
 
 def main(args):
     if (args.help == True):
-        print("Usage: {} [-h] [-a NAME TYPE UNIT OFFSET PATH] [-l PATH] " 
+        print("Usage: {} [-h] [-a NAME TYPE UNIT OFFSET PATH] [-l PATH] "
               "[-rm SLAVEPATH SOURCEPATH]".format(sys.argv[0]))
         print("")
         print("Optional arguments:")
@@ -56,7 +56,7 @@ def main(args):
             obj = bus.get_object("br.org.cesar.modbus", args.add[4])
             props = dbus.Interface(obj, "org.freedesktop.DBus.Properties")
             slave = dbus.Interface(obj, "br.org.cesar.modbus.Slave1")
-        else : 
+        else :
             print("No slave path given. See help")
             return 1
         print ("Adding source:")
